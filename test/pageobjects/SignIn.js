@@ -1,6 +1,9 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 class SignIn {
     get signInTriggerBtn() {
-        return $('nav button'); 
+        return $('nav button');
     }
 
     get inputEmail() {
@@ -16,27 +19,28 @@ class SignIn {
     }
 
     get profileBtn() {
-        return $('nav img'); 
+        return $('nav img');
     }
 
     async clickSignInTrigger() {
-        await this.signInTriggerBtn.waitForDisplayed({ timeout: 5000 });
         await this.signInTriggerBtn.click();
     }
 
     async enterCredentials(email, password) {
-        await this.inputEmail.waitForDisplayed({ timeout: 5000 });
         await this.inputEmail.setValue(email);
         await this.inputPassword.setValue(password);
     }
 
+    async enterDefaultCredentials() {
+        await this.enterCredentials(process.env.EMAIL, process.env.PASSWORD);
+    }
+
     async submitLogin() {
-        await this.submitBtn.waitForDisplayed({ timeout: 5000 });
         await this.submitBtn.click();
     }
 
     async isLoggedIn() {
-        return this.profileBtn.waitForDisplayed({ timeout: 10000 });
+        return this.profileBtn.waitForDisplayed({ timeout: 1000 });
     }
 }
 

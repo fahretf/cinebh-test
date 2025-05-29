@@ -25,18 +25,25 @@ export const config = {
     globals: {
     //    username: argv.username || process.env.TEST_USERNAME || 'default_username',
     },
+    env: {
+        EMAIL: process.env.EMAIL,
+        PASSWORD: process.env.PASSWORD
+    },
     suites: {
         smoke: [
-            './test/specs/smoke/signIn.spec.mjs',
-            './test/specs/smoke/signOut.spec.mjs',
+            './test/specs/ui/smoke/signIn.spec.mjs',
+            './test/specs/ui/smoke/signOut.spec.mjs',
 
         ],
         signIn: [
-            './test/specs/smoke/signIn.spec.mjs'
+            './test/specs/ui/smoke/signIn.spec.mjs'
         ],
         signOut: [
-            './test/specs/smoke/signOut.spec.mjs'
+            './test/specs/ui/smoke/signOut.spec.mjs'
         ],
+        search: [
+            './test/specs/ui/regression/movieSearch.spec.mjs'
+        ]
 
     },
     maxInstances: 10,
