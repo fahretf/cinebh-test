@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js --suite %npm_config_suite%",
+    "wdio": "wdio run ./wdio.conf.js --suite $npm_config_suite",
     "test": "wdio run wdio.conf.js"
   },
   "keywords": [],
