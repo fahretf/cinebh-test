@@ -53,9 +53,20 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: [
+                '--headless',
+                '--no-sandbox',
+                '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--disable-extensions',
+                '--disable-infobars',
+                '--disable-browser-side-navigation',
+                '--window-size=1920,1080'
+            ]
+        }
     }],
-
     //
     // ===================
     // Test Configurations
