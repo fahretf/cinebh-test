@@ -32,7 +32,7 @@ class SignIn {
     }
 
     async enterDefaultCredentials() {
-        await this.enterCredentials(process.env.EMAIL, process.env.PASSWORD);
+        await this.enterCredentials("fahretfij@gmail.com", "Fijuljanin1!");
     }
 
     async submitLogin() {
